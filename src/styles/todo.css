@@ -1,0 +1,169 @@
+/* To-Do Cute Notes Styles */
+.todo-layout {
+  max-width: 1050px;
+  margin: 0 auto;
+  padding: 0 1.5rem 5rem;
+}
+
+/* Light Theme: Pastel Paper Texture & Warmth */
+[data-theme="light"] .todo-board {
+  background: #FDFBF7;
+  border: 2px dashed #E2D9CC;
+  border-radius: 1.5rem;
+  padding: 2.5rem;
+  box-shadow: inset 0 0 40px rgba(0, 0, 0, 0.02);
+}
+
+/* Dark Theme: Chalkboard / Night Notes Variant */
+[data-theme="dark"] .todo-board {
+  background: #121824;
+  border: 2px dashed #26344D;
+  border-radius: 1.5rem;
+  padding: 2.5rem;
+  box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.4);
+}
+
+.todo-header-section {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.todo-input-bar {
+  display: flex;
+  gap: 0.75rem;
+  max-width: 650px;
+  margin: 0 auto 2.5rem;
+}
+
+.todo-input {
+  flex-grow: 1;
+  padding: 0.85rem 1.25rem;
+  border-radius: 9999px;
+  border: 1px solid var(--border-subtle);
+  background: var(--bg-card);
+  color: var(--text-primary);
+  font-size: 1rem;
+  outline: none;
+  box-shadow: var(--shadow-ambient);
+  transition: border-color var(--transition-fast);
+}
+
+.todo-input:focus {
+  border-color: var(--primary-accent);
+}
+
+/* Sticky Note Cards Grid */
+.notes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1.5rem;
+}
+
+.sticky-note {
+  position: relative;
+  min-height: 180px;
+  padding: 1.5rem 1.25rem;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.3s ease;
+  font-family: var(--font-body);
+}
+
+.sticky-note:hover {
+  transform: translateY(-4px) rotate(0.5deg);
+  box-shadow: 0 14px 26px rgba(0, 0, 0, 0.15);
+}
+
+/* Pastel Tints in Light Mode */
+[data-theme="light"] .sticky-note.tint-yellow { background: #FEF9C3; color: #422006; border-left: 6px solid #FACC15; }
+[data-theme="light"] .sticky-note.tint-pink { background: #FCE7F3; color: #831843; border-left: 6px solid #F472B6; }
+[data-theme="light"] .sticky-note.tint-green { background: #DCFCE7; color: #14532D; border-left: 6px solid #4ADE80; }
+[data-theme="light"] .sticky-note.tint-blue { background: #E0F2FE; color: #0C4A6E; border-left: 6px solid #38BDF8; }
+
+/* Chalkboard / Night Note Tints in Dark Mode */
+[data-theme="dark"] .sticky-note.tint-yellow { background: #1E222D; color: #FEF08A; border-left: 6px solid #FACC15; border-top: 1px solid rgba(255,255,255,0.06); }
+[data-theme="dark"] .sticky-note.tint-pink { background: #261D2A; color: #FBCFE8; border-left: 6px solid #F472B6; border-top: 1px solid rgba(255,255,255,0.06); }
+[data-theme="dark"] .sticky-note.tint-green { background: #172422; color: #BBF7D0; border-left: 6px solid #4ADE80; border-top: 1px solid rgba(255,255,255,0.06); }
+[data-theme="dark"] .sticky-note.tint-blue { background: #162436; color: #BAE6FD; border-left: 6px solid #38BDF8; border-top: 1px solid rgba(255,255,255,0.06); }
+
+/* Completed State with Strike-through and Soft Dim */
+.sticky-note.completed {
+  opacity: 0.5;
+}
+
+.sticky-note.completed .note-text {
+  text-decoration: line-through;
+  text-decoration-thickness: 2px;
+}
+
+.note-text {
+  font-size: 1.05rem;
+  line-height: 1.5;
+  word-break: break-word;
+  transition: all 0.25s ease;
+}
+
+.note-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 1rem;
+}
+
+.note-checkbox-wrap {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  user-select: none;
+}
+
+.note-checkbox {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  accent-color: var(--primary-accent);
+}
+
+.note-delete-btn {
+  opacity: 0;
+  background: none;
+  border: none;
+  font-size: 1.25rem;
+  cursor: pointer;
+  color: inherit;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.sticky-note:hover .note-delete-btn {
+  opacity: 0.7;
+}
+
+.note-delete-btn:hover {
+  opacity: 1 !important;
+  transform: scale(1.2);
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 640px) {
+  .todo-layout {
+    padding: 0 1rem 3rem;
+  }
+  [data-theme="light"] .todo-board, [data-theme="dark"] .todo-board {
+    padding: 1.25rem 1rem;
+    border-radius: 1rem;
+  }
+  .notes-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  .sticky-note {
+    min-height: 140px;
+  }
+  .note-delete-btn {
+    opacity: 0.7;
+  }
+}

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Orbit — Cute Notes To-Do List</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../src/styles/core.css">
+  <link rel="stylesheet" href="../src/styles/todo.css">
+</head>
+<body>
+
+  <!-- Top Tool Header Bar -->
+  <header class="tool-header-bar">
+    <a href="../index.html" class="back-to-orbit-btn">
+      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m15 18-6-6 6-6"/></svg>
+      &larr; Back to Orbit
+    </a>
+
+    <div style="display: flex; align-items: center; gap: 1rem;">
+      <span class="nav-brand" style="font-size: 1.15rem;">
+        <span class="logo-orb" style="width: 22px; height: 22px;"></span>
+        <span>Cute Notes To-Do</span>
+      </span>
+      <button class="theme-toggle-btn" id="theme-toggle" aria-label="Toggle Dark and Light theme">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <main class="todo-layout">
+    <div class="todo-header-section">
+      <h1 style="font-size: 2.25rem; margin-bottom: 0.5rem;" class="gradient-text">Keep It Simple & Cute</h1>
+      <p style="color: var(--text-secondary); max-width: 550px; margin: 0 auto;">Capture your tasks without the mental clutter. Sticky notes adapt smoothly between daytime pastels and nighttime chalkboard tones.</p>
+    </div>
+
+    <!-- Input Bar -->
+    <form class="todo-input-bar" id="todo-form">
+      <input type="text" id="new-task-input" class="todo-input" placeholder="Type a new task or study goal... (Press Enter)" autofocus>
+      <button type="submit" class="btn-primary" id="add-task-btn">+ Add Note</button>
+    </form>
+
+    <!-- Board Area -->
+    <div class="todo-board">
+      <div class="notes-grid" id="notes-grid">
+        <!-- Rendered via todo.js -->
+      </div>
+    </div>
+  </main>
+
+  <script type="module" src="../src/scripts/todo.js"></script>
+</body>
+</html>

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Orbit — Well-Being & Stress Meter</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&family=Space+Grotesk:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../src/styles/core.css">
+  <link rel="stylesheet" href="../src/styles/wellbeing.css">
+</head>
+<body>
+
+  <!-- Top Tool Header Bar -->
+  <header class="tool-header-bar">
+    <a href="../index.html" class="back-to-orbit-btn">
+      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m15 18-6-6 6-6"/></svg>
+      &larr; Back to Orbit
+    </a>
+
+    <div style="display: flex; align-items: center; gap: 1rem;">
+      <span class="nav-brand" style="font-size: 1.15rem;">
+        <span class="logo-orb" style="width: 22px; height: 22px;"></span>
+        <span>Well-Being & Balance</span>
+      </span>
+      <button class="theme-toggle-btn" id="theme-toggle" aria-label="Toggle Dark and Light theme">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <main class="wellbeing-layout">
+    <!-- Quick Exit Button for Privacy -->
+    <div class="quick-exit-bar">
+      <button class="quick-exit-btn" id="quick-exit-btn">
+        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" x2="6" y1="6" y2="18"/><line x1="6" x2="18" y1="6" y2="18"/></svg>
+        Quick Exit
+      </button>
+    </div>
+
+    <div style="text-align: center; margin-bottom: 2rem;">
+      <h1 style="font-size: 2.25rem; margin-bottom: 0.5rem;" class="gradient-text">How are you feeling today?</h1>
+      <p style="color: var(--text-secondary); max-width: 550px; margin: 0 auto;">Take a quiet moment to check in with yourself. Orbit tracks both your emotional pulse and your academic burden.</p>
+    </div>
+
+    <!-- Mood Check-in Emojis -->
+    <div class="mood-selector">
+      <button class="mood-btn" data-mood="great">
+        <span class="mood-emoji">😄</span>
+        <span class="mood-label">Great</span>
+      </button>
+      <button class="mood-btn" data-mood="good">
+        <span class="mood-emoji">🙂</span>
+        <span class="mood-label">Good</span>
+      </button>
+      <button class="mood-btn" data-mood="neutral">
+        <span class="mood-emoji">😐</span>
+        <span class="mood-label">Okay</span>
+      </button>
+      <button class="mood-btn" data-mood="stressed">
+        <span class="mood-emoji">😣</span>
+        <span class="mood-label">Stressed</span>
+      </button>
+      <button class="mood-btn" data-mood="overwhelmed">
+        <span class="mood-emoji">😫</span>
+        <span class="mood-label">Overwhelmed</span>
+      </button>
+    </div>
+
+    <!-- Transparent Stress Meter Gauge -->
+    <div class="glass-panel stress-gauge-card">
+      <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 0.5rem;">
+        <div>
+          <span style="font-size: 0.8rem; text-transform: uppercase; color: var(--text-muted); font-weight: 600;">Academic Stress Meter</span>
+          <h2 id="stress-status-label" style="font-size: 1.4rem; margin-top: 0.25rem;">Moderate Pressure ⚡</h2>
+        </div>
+        <div style="font-family: var(--font-mono); font-size: 2rem; font-weight: 700; color: var(--primary-accent);" id="stress-index-display">48%</div>
+      </div>
+
+      <!-- Stress Gauge Track -->
+      <div class="stress-bar-track">
+        <div class="stress-bar-fill" id="stress-bar-fill"></div>
+      </div>
+
+      <div class="stress-formula-tooltip">
+        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" x2="12" y1="16" y2="12"/><line x1="12" x2="12.01" y1="8" y2="8"/></svg>
+        <span><strong>How this works:</strong> Calculated transparently from your current mood check-in + <span id="stress-pending-count">0 pending tasks</span> across your To-Do list & schedule.</span>
+      </div>
+    </div>
+
+    <!-- Need to Talk & Crisis Support -->
+    <div class="section-header" style="text-align: left; margin-bottom: 1.25rem;">
+      <h3 style="font-size: 1.4rem;">Need to talk through it?</h3>
+      <p style="color: var(--text-secondary); font-size: 0.92rem;">Academic pressure can be heavy. You don't have to carry it alone.</p>
+    </div>
+
+    <div class="crisis-grid">
+      <!-- Talk with Orbit Gentle Mode -->
+      <div class="crisis-card">
+        <h4>Gentle Talk with Orbit</h4>
+        <p>A softer, pressure-free chat mode to help you untangle feeling overwhelmed.</p>
+        <a href="../ask-orbit/index.html?mode=wellbeing" class="btn-primary" style="font-size: 0.85rem; padding: 0.5rem 1.1rem;">Start Gentle Chat</a>
+      </div>
+
+      <!-- Campus Counseling -->
+      <div class="crisis-card">
+        <h4>Campus Counseling Support</h4>
+        <p>Direct confidential contact for your university's student care services.</p>
+        <div style="font-family: var(--font-mono); font-size: 0.85rem; color: var(--primary-accent); margin-bottom: 0.85rem;">[CAMPUS COUNSELING CONTACT]</div>
+        <button class="btn-secondary" style="font-size: 0.85rem; padding: 0.5rem 1rem;">View Campus Hours</button>
+      </div>
+
+      <!-- National Helpline Placeholder -->
+      <div class="crisis-card">
+        <h4>24/7 Crisis Lifeline</h4>
+        <p>Free, anonymous emotional support available anytime by call or text.</p>
+        <div style="font-family: var(--font-mono); font-size: 0.85rem; color: var(--conversion-accent); margin-bottom: 0.85rem;">[NATIONAL/REGIONAL HELPLINE — PLACEHOLDER]</div>
+        <button class="btn-secondary" style="font-size: 0.85rem; padding: 0.5rem 1rem;">Call Helpline</button>
+      </div>
+    </div>
+  </main>
+
+  <script type="module" src="../src/scripts/wellbeing.js"></script>
+</body>
+</html>

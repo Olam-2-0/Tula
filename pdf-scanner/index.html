@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Orbit — PDF Notes-to-Outline Scanner</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../src/styles/core.css">
+  <link rel="stylesheet" href="../src/styles/pdfScanner.css">
+</head>
+<body>
+
+  <!-- Top Tool Header Bar -->
+  <header class="tool-header-bar">
+    <a href="../index.html" class="back-to-orbit-btn">
+      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m15 18-6-6 6-6"/></svg>
+      &larr; Back to Orbit
+    </a>
+
+    <div style="display: flex; align-items: center; gap: 1rem;">
+      <span class="nav-brand" style="font-size: 1.15rem;">
+        <span class="logo-orb" style="width: 22px; height: 22px;"></span>
+        <span>PDF Study Scanner</span>
+      </span>
+      <button class="theme-toggle-btn" id="theme-toggle" aria-label="Toggle Dark and Light theme">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <main class="pdf-scanner-layout">
+    <div style="text-align: center; margin-bottom: 2.5rem;">
+      <h1 style="font-size: 2.25rem; margin-bottom: 0.5rem;" class="gradient-text">Instant Study Outline</h1>
+      <p style="color: var(--text-secondary); max-width: 600px; margin: 0 auto;">Drop your lecture slides, textbook PDF, or handwritten notes to generate structured key points and an optimized learning sequence.</p>
+    </div>
+
+    <!-- Upload Dropzone -->
+    <div class="upload-dropzone" id="dropzone">
+      <div class="upload-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" x2="12" y1="3" y2="15"/></svg>
+      </div>
+      <h3 style="font-size: 1.3rem; margin-bottom: 0.5rem;">Drag & drop your study PDF here</h3>
+      <p style="color: var(--text-secondary); font-size: 0.92rem; margin-bottom: 1.25rem;">Supports syllabus PDFs, textbook chapters, or lecture notes</p>
+      
+      <div style="display: flex; justify-content: center; gap: 0.75rem; flex-wrap: wrap;">
+        <button class="btn-primary" id="browse-files-btn" style="font-size: 0.88rem; padding: 0.6rem 1.4rem;" type="button">Browse Files</button>
+        <button class="btn-secondary" id="load-sample-btn" style="font-size: 0.88rem; padding: 0.6rem 1.4rem;" type="button">Load Sample PDF</button>
+      </div>
+
+      <input type="file" id="file-input" accept=".pdf" style="display: none;">
+    </div>
+
+    <!-- Processing Animation -->
+    <div class="processing-indicator" id="processing-indicator">
+      <div class="processing-spinner"></div>
+      <h3 style="font-size: 1.2rem; margin-bottom: 0.35rem;">Analyzing Study Material...</h3>
+      <p style="color: var(--text-secondary); font-size: 0.88rem;">Extracting concepts, subtopics, and high-yield study points</p>
+    </div>
+
+    <!-- Expandable Outline Tree Output -->
+    <div class="outline-container" id="outline-container">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; border-bottom: 1px solid var(--border-subtle); padding-bottom: 1rem;">
+        <div>
+          <span style="font-size: 0.78rem; text-transform: uppercase; color: var(--text-muted); font-weight: 600;">Parsed Document</span>
+          <h2 style="font-size: 1.35rem;" id="uploaded-doc-name">Biology_Ch4_Cellular_Energy.pdf</h2>
+        </div>
+        <button class="btn-secondary" onclick="window.location.reload()" style="font-size: 0.82rem; padding: 0.4rem 0.85rem;">Upload New File</button>
+      </div>
+
+      <!-- Outline List -->
+      <div id="topics-tree">
+        <!-- Rendered via pdfScanner.js -->
+      </div>
+
+      <!-- Action: Generate Study Plan Sequence -->
+      <div style="margin-top: 2rem; text-align: center;">
+        <button class="btn-primary" id="generate-study-plan-btn">Generate Study Plan</button>
+      </div>
+
+      <!-- Generated Study Plan Output -->
+      <div class="study-plan-output" id="study-plan-output">
+        <h3 style="font-size: 1.2rem; margin-bottom: 0.85rem; color: var(--secondary-accent);">Suggested Learning Sequence</h3>
+        <div id="study-plan-steps"></div>
+      </div>
+    </div>
+  </main>
+
+  <script type="module" src="../src/scripts/pdfScanner.js"></script>
+</body>
+</html>

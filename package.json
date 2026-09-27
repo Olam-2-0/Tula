@@ -1,0 +1,18 @@
+{
+  "name": "orbit",
+  "version": "2.0.0",
+  "description": "Orbit - AI-Powered Student Life OS",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "canvas-confetti": "^1.9.4",
+    "lucide": "^1.48.0"
+  },
+  "devDependencies": {
+    "vite": "^8.3.1"
+  }
+}

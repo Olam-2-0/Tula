@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Orbit — AI-Powered Student Life OS</title>
+  <meta name="description" content="Orbit: Your academics, routine, and well-being in one orbit. A functional, motion-rich student productivity suite.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&family=Space+Grotesk:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./src/styles/core.css">
+  <link rel="stylesheet" href="./src/styles/home.css">
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <nav class="orbit-nav" id="main-nav">
+    <a href="./" class="nav-brand" id="nav-brand-logo">
+      <span class="logo-orb"></span>
+      <span>ORBIT</span>
+    </a>
+
+    <ul class="nav-links">
+      <li><a href="#problem" class="nav-link">Problem</a></li>
+      <li><a href="#capabilities" class="nav-link">Features</a></li>
+      <li><a href="#how-it-works" class="nav-link">How it Works</a></li>
+      <li><a href="#trust" class="nav-link">Trust</a></li>
+    </ul>
+
+    <div class="nav-actions">
+      <!-- Dark / Light Mode Toggle Button -->
+      <button class="theme-toggle-btn" id="theme-toggle" aria-label="Toggle Dark and Light theme">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>
+      </button>
+
+      <a href="#early-access" class="btn-primary" id="nav-cta-btn">Join us!</a>
+
+      <button class="mobile-menu-btn" aria-label="Open mobile menu">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile Drawer -->
+  <div class="mobile-drawer" id="mobile-drawer">
+    <a href="#problem" class="nav-link">Problem</a>
+    <a href="#capabilities" class="nav-link">Features</a>
+    <a href="#how-it-works" class="nav-link">How it Works</a>
+    <a href="#trust" class="nav-link">Trust</a>
+    <a href="#early-access" class="btn-primary" style="margin-top: 1rem;">Join us!</a>
+  </div>
+
+  <main>
+    <!-- Slide 1: Hero Section -->
+    <section class="hero-section" id="hero">
+      <div class="aurora-mesh"></div>
+      
+      <!-- Scattered Floating Stars Background -->
+      <div class="stars-container" id="stars-container"></div>
+
+      <!-- Subtle Orbital Rings Behind Content -->
+      <div class="hero-orbit-rings">
+        <div class="hero-ring ring-outer"></div>
+        <div class="hero-ring ring-inner"></div>
+      </div>
+
+      <!-- Peripheral Orbit Status Cards Container (Left & Right Flanks) -->
+      <div class="peripheral-status-layer">
+        <!-- Left Peripheral Cards -->
+        <div class="status-column status-column-left">
+          <div class="orbit-status-card status-card-cyan float-anim-1">
+            <div class="status-card-icon">📝</div>
+            <div class="status-card-text">
+              <div class="status-card-title">Exam</div>
+              <div class="status-card-sub">In 3 Days</div>
+            </div>
+          </div>
+
+          <div class="orbit-status-card status-card-coral float-anim-2">
+            <div class="status-card-icon">🌙</div>
+            <div class="status-card-text">
+              <div class="status-card-title">Sleep Deficit</div>
+              <div class="status-card-sub">-2h Restored</div>
+            </div>
+          </div>
+
+          <div class="orbit-status-card status-card-violet float-anim-3">
+            <div class="status-card-icon">📢</div>
+            <div class="status-card-text">
+              <div class="status-card-title">HoD Class Shift</div>
+              <div class="status-card-sub">Rescheduled 2 PM</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Peripheral Cards -->
+        <div class="status-column status-column-right">
+          <div class="orbit-status-card status-card-teal float-anim-4">
+            <div class="status-card-icon">⚡</div>
+            <div class="status-card-text">
+              <div class="status-card-title">Series Prep</div>
+              <div class="status-card-sub">85% Complete</div>
+            </div>
+          </div>
+
+          <div class="orbit-status-card status-card-green float-anim-5">
+            <div class="status-card-icon">🌿</div>
+            <div class="status-card-text">
+              <div class="status-card-title">Burnout Resolved</div>
+              <div class="status-card-sub">Optimal Rhythm</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Main Centered Hero Content Core -->
+      <div class="hero-content" id="hero-core">
+        <div class="glitter-pill">
+          <span class="glitter-sparkle">✨</span>
+          <span>AI-Powered Student Life OS</span>
+        </div>
+
+        <h1 class="hero-title gradient-text">ORBIT</h1>
+
+        <p class="hero-tagline">Your academics. Your routine. Your well-being. One orbit.</p>
+
+        <div class="hero-description-card">
+          <p class="hero-description">
+            It's not just you. Thousands of students feel the same way—and still go on to achieve great things! Stress won't get you anywhere. With Orbit, everything you need is in one place. Our platform helps students organize their tasks, manage their priorities, and ease their academic stress—all completely free, with no payments required. So take a breath. You're doing better than you think. 🌟 Let Orbit be your first step, Warriors! 🚀
+          </p>
+        </div>
+
+        <div class="hero-ctas">
+          <a href="#early-access" class="btn-primary btn-orange-glow" id="hero-join-cta">
+            <span>Join Early Access</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+          <a href="#how-it-works" class="btn-secondary" id="hero-explore-cta">See How It Works</a>
+        </div>
+
+        <!-- Waitlist Translucent Info Bar -->
+        <div class="waitlist-info-bar">
+          <span class="waitlist-count"><strong class="odometer-wrapper" id="waitlist-odometer">1,409</strong> students on waitlist</span>
+          <span class="waitlist-bullet">•</span>
+          <span class="waitlist-tag">Built for college semester cadence</span>
+        </div>
+      </div>
+
+      <!-- Scroll cue -->
+      <div class="scroll-cue">
+        <span>Scroll to explore</span>
+        <span class="scroll-cue-dot"></span>
+      </div>
+    </section>
+
+    <!-- Slide 2: Problem? Interactive Tool Hub -->
+    <section class="tool-hub-section" id="problem">
+      <div class="section-header">
+        <h2 class="section-title gradient-text">Problem?</h2>
+        <p class="section-subtitle">Here's what's actually been making student life harder — try the fix for each one.</p>
+      </div>
+
+      <div class="tool-grid">
+        <!-- 1. Calendar -->
+        <div class="tool-card interactive-card" onclick="window.location.href='./calendar/index.html'">
+          <div class="tool-card-icon-wrap">
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/></svg>
+          </div>
+          <h3 class="tool-card-title">Calendar</h3>
+          <p class="tool-card-desc">Scattered deadlines and clashing schedules, finally in one view.</p>
+          <a href="./calendar/index.html" class="tool-card-cta">Explore! &rarr;</a>
+        </div>
+
+        <!-- 2. To-Do List -->
+        <div class="tool-card interactive-card" onclick="window.location.href='./todo/index.html'">
+          <div class="tool-card-icon-wrap">
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 11 3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+          </div>
+          <h3 class="tool-card-title">To-Do List</h3>
+          <p class="tool-card-desc">Everything you need to get done, without the mental clutter.</p>
+          <a href="./todo/index.html" class="tool-card-cta">Explore! &rarr;</a>
+        </div>
+
+        <!-- 3. Focus Mode Timer -->
+        <div class="tool-card interactive-card" onclick="window.location.href='./focus/index.html'">
+          <div class="tool-card-icon-wrap">
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </div>
+          <h3 class="tool-card-title">Focus Mode Timer</h3>
+          <p class="tool-card-desc">Structured focus and real breaks, instead of endless scrolling.</p>
+          <a href="./focus/index.html" class="tool-card-cta">Explore! &rarr;</a>
+        </div>
+
+        <!-- 4. Ask, Orbit! -->
+        <div class="tool-card interactive-card" onclick="window.location.href='./ask-orbit/index.html'">
+          <div class="tool-card-icon-wrap">
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+          </div>
+          <h3 class="tool-card-title">Ask, Orbit!</h3>
+          <p class="tool-card-desc">Tell it what's due and what's left. It breaks it down for you.</p>
+          <a href="./ask-orbit/index.html" class="tool-card-cta">Explore! &rarr;</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Slide 3: Interactive Orbit Visualization -->
+    <section class="orbit-visualization-section" id="introducing">
+      <div class="orbit-stage" id="orbital-stage">
+        <!-- Thin Glowing Concentric Orbital Rings -->
+        <div class="stage-rings">
+          <div class="stage-ring ring-1"></div>
+          <div class="stage-ring ring-2"></div>
+          <div class="stage-ring ring-3"></div>
+        </div>
+
+        <!-- Central Fixed YOU Element -->
+        <div class="central-you-node" id="central-you">
+          <span class="you-symbol">✦</span>
+          <span class="you-label">YOU</span>
+        </div>
+
+        <!-- Orbiting Category Pills Container -->
+        <div class="orbit-bubbles-container" id="orbit-bubbles-container">
+          <!-- Ring 1 Track (Inner Orbit) -->
+          <div class="orbit-track orbit-track-1">
+            <div class="orbit-pill-bubble bubble-assignments" data-id="assignments"><span class="bubble-icon">📄</span><span class="bubble-label">Assignments</span></div>
+            <div class="orbit-pill-bubble bubble-exams" data-id="exams"><span class="bubble-icon">🎯</span><span class="bubble-label">Exams</span></div>
+          </div>
+
+          <!-- Ring 2 Track (Middle Orbit) -->
+          <div class="orbit-track orbit-track-2">
+            <div class="orbit-pill-bubble bubble-habits" data-id="habits"><span class="bubble-icon">🌱</span><span class="bubble-label">Habits</span></div>
+            <div class="orbit-pill-bubble bubble-timetable" data-id="timetable"><span class="bubble-icon">📅</span><span class="bubble-label">Timetable</span></div>
+          </div>
+
+          <!-- Ring 3 Track (Outer Orbit) -->
+          <div class="orbit-track orbit-track-3">
+            <div class="orbit-pill-bubble bubble-wellbeing" data-id="wellbeing"><span class="bubble-icon">💜</span><span class="bubble-label">Well-being</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Slide 4: Core Capabilities ("More ways Orbit helps") -->
+    <section class="tool-hub-section" id="capabilities">
+      <div class="section-header">
+        <h2 class="section-title gradient-text">More ways Orbit helps</h2>
+        <p class="section-subtitle">Real capabilities designed to keep you focused, grounded, and prepared.</p>
+      </div>
+
+      <div class="tool-grid">
+        <!-- PDF Scanner -->
+        <div class="tool-card interactive-card" onclick="window.location.href='./pdf-scanner/index.html'">
+          <div class="tool-card-icon-wrap" style="color: var(--secondary-accent); background: rgba(var(--secondary-accent-rgb), 0.15);">
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><polyline points="14 2 14 8 20 8"/></svg>
+          </div>
+          <h3 class="tool-card-title">PDF Scanner</h3>
+          <p class="tool-card-desc">Upload your notes. Get a clear outline back.</p>
+          <a href="./pdf-scanner/index.html" class="tool-card-cta">Explore! &rarr;</a>
+        </div>
+
+        <!-- Progress Tracking (links to Calendar) -->
+        <div class="tool-card interactive-card" onclick="window.location.href='./calendar/index.html'">
+          <div class="tool-card-icon-wrap" style="color: var(--conversion-accent); background: rgba(var(--conversion-accent-rgb), 0.15);">
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20v-6M6 20V10M18 20V4"/></svg>
+          </div>
+          <h3 class="tool-card-title">Progress Tracking</h3>
+          <p class="tool-card-desc">Watch your day fill in as you go with real-time progress orbs.</p>
+          <a href="./calendar/index.html" class="tool-card-cta">Explore! &rarr;</a>
+        </div>
+
+        <!-- Well-Being & Stress Support -->
+        <div class="tool-card interactive-card" onclick="window.location.href='./wellbeing/index.html'">
+          <div class="tool-card-icon-wrap" style="color: var(--success); background: rgba(52, 211, 153, 0.15);">
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
+          </div>
+          <h3 class="tool-card-title">Well-Being & Stress Support</h3>
+          <p class="tool-card-desc">A quick check-in, and real help if you need it.</p>
+          <a href="./wellbeing/index.html" class="tool-card-cta">Explore! &rarr;</a>
+        </div>
+      </div>
+
+      <!-- Roadmap Box (Section 6.4: Honest capability scope) -->
+      <div class="glass-panel" style="margin-top: 3.5rem; padding: 2.25rem 2rem;">
+        <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem;">
+          <span style="font-size: 0.8rem; font-weight: 700; background: rgba(var(--secondary-accent-rgb), 0.2); color: var(--secondary-accent); padding: 0.25rem 0.75rem; border-radius: 9999px; text-transform: uppercase;">Coming soon</span>
+          <h4 style="font-size: 1.2rem;">On the Roadmap</h4>
+        </div>
+        <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.7; max-width: 900px;">
+          Orbit is continuously evolving. Our technical roadmap includes: <strong>WhatsApp + app hybrid reminders</strong> for seamless low-data alerts, <strong>multilingual interface and AI responses</strong> (supporting English, Malayalam, and Hindi), and <strong>offline-first local sync</strong> for dependable access in lecture halls.
+        </p>
+      </div>
+    </section>
+
+    <!-- Slide 5: How Orbit Works -->
+    <section class="tool-hub-section" id="how-it-works">
+      <div class="section-header">
+        <h2 class="section-title gradient-text">How Orbit Works</h2>
+        <p class="section-subtitle">From deadline anxiety to structured calm in four steps.</p>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.5rem;">
+        <div class="glass-panel" style="padding: 2rem;">
+          <div style="font-family: var(--font-mono); font-size: 1.5rem; color: var(--primary-accent); margin-bottom: 0.75rem;">01</div>
+          <h3 style="font-size: 1.2rem; margin-bottom: 0.5rem;">Capture Deadlines</h3>
+          <p style="color: var(--text-secondary); font-size: 0.9rem;">Drop in your syllabus dates, exams, and recurring assignment due times.</p>
+        </div>
+        <div class="glass-panel" style="padding: 2rem;">
+          <div style="font-family: var(--font-mono); font-size: 1.5rem; color: var(--secondary-accent); margin-bottom: 0.75rem;">02</div>
+          <h3 style="font-size: 1.2rem; margin-bottom: 0.5rem;">AI Breakdown</h3>
+          <p style="color: var(--text-secondary); font-size: 0.9rem;">Ask Orbit decomposes massive term projects into realistic daily micro-tasks.</p>
+        </div>
+        <div class="glass-panel" style="padding: 2rem;">
+          <div style="font-family: var(--font-mono); font-size: 1.5rem; color: var(--conversion-accent); margin-bottom: 0.75rem;">03</div>
+          <h3 style="font-size: 1.2rem; margin-bottom: 0.5rem;">Deep Focus Mode</h3>
+          <p style="color: var(--text-secondary); font-size: 0.9rem;">Run high-clarity Pomodoro sessions in a clean, bright, distraction-free environment.</p>
+        </div>
+        <div class="glass-panel" style="padding: 2rem;">
+          <div style="font-family: var(--font-mono); font-size: 1.5rem; color: var(--success); margin-bottom: 0.75rem;">04</div>
+          <h3 style="font-size: 1.2rem; margin-bottom: 0.5rem;">Track & Breathe</h3>
+          <p style="color: var(--text-secondary); font-size: 0.9rem;">Watch your progress ring fill up and monitor stress levels before burnout strikes.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Slide 6: Orbit vs. Typical Apps -->
+    <section class="tool-hub-section" id="comparison">
+      <div class="section-header">
+        <h2 class="section-title gradient-text">Orbit vs. Typical Apps</h2>
+        <p class="section-subtitle">Why students prefer an integrated ecosystem over disconnected tools.</p>
+      </div>
+
+      <div class="comparison-container">
+        <table class="comparison-table">
+          <thead>
+            <tr>
+              <th>Feature</th>
+              <th>Generic To-Do Apps</th>
+              <th>Orbit Student OS</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Academic Awareness</strong></td>
+              <td style="color: var(--text-muted);">Generic checkboxes with no context</td>
+              <td style="color: var(--success); font-weight: 600;">Customized for syllabi, labs & exams</td>
+            </tr>
+            <tr>
+              <td><strong>Task Breakdown</strong></td>
+              <td style="color: var(--text-muted);">Manual entry only</td>
+              <td style="color: var(--success); font-weight: 600;">Automated AI pacing based on days left</td>
+            </tr>
+            <tr>
+              <td><strong>Note Digestion</strong></td>
+              <td style="color: var(--text-muted);">None (requires separate tool)</td>
+              <td style="color: var(--success); font-weight: 600;">Integrated PDF study outline generator</td>
+            </tr>
+            <tr>
+              <td><strong>Mental Health Integration</strong></td>
+              <td style="color: var(--text-muted);">Ignored completely</td>
+              <td style="color: var(--success); font-weight: 600;">Built-in mood check-ins & crisis help</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Slide 7: Built for Trust & Privacy -->
+    <section class="tool-hub-section" id="trust">
+      <div class="section-header">
+        <h2 class="section-title gradient-text">Built for Trust</h2>
+        <p class="section-subtitle">Your student data stays yours. Designed with strict privacy standards.</p>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem;">
+        <div class="glass-panel" style="padding: 2rem;">
+          <h3 style="font-size: 1.25rem; margin-bottom: 0.75rem;">DPDP-Aligned Privacy</h3>
+          <p style="color: var(--text-secondary); font-size: 0.92rem;">We adhere to data protection norms ensuring no personal student records or study documents are sold or utilized for training third-party advertising models.</p>
+        </div>
+        <div class="glass-panel" style="padding: 2rem;">
+          <h3 style="font-size: 1.25rem; margin-bottom: 0.75rem;">End-to-End Encryption</h3>
+          <p style="color: var(--text-secondary); font-size: 0.92rem;">Notes, schedules, and chat history are secured with modern encryption protocols both in transit and at rest in local stores.</p>
+        </div>
+        <div class="glass-panel" style="padding: 2rem;">
+          <h3 style="font-size: 1.25rem; margin-bottom: 0.75rem;">Human Care Escalation</h3>
+          <p style="color: var(--text-secondary); font-size: 0.92rem;">Orbit knows its boundaries. Whenever severe distress is detected, instant links to professional campus counselors and helplines take immediate priority.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Slide 8: Early Access Section -->
+    <section class="tool-hub-section" id="early-access">
+      <div class="section-header">
+        <h2 class="section-title gradient-text">Be one of the first to orbit smarter</h2>
+        <p class="section-subtitle">Join thousands of students on the waitlist today. Free forever for students.</p>
+      </div>
+
+      <div class="glass-panel early-access-card">
+        <form id="early-access-form">
+          <div class="form-group">
+            <label class="form-label" for="student-name">Full Name</label>
+            <input type="text" id="student-name" class="form-input" placeholder="e.g. Maya Chen" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="student-email">College / University Email</label>
+            <input type="email" id="student-email" class="form-input" placeholder="e.g. maya@university.edu" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="college-name">College Name</label>
+            <input type="text" id="college-name" class="form-input" placeholder="e.g. State University" required>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">What tools are you most excited about?</label>
+            <div class="checkbox-group">
+              <label class="checkbox-label"><input type="checkbox" checked> Academic Calendar & Progress Ring</label>
+              <label class="checkbox-label"><input type="checkbox" checked> Cute Notes Sticky To-Do List</label>
+              <label class="checkbox-label"><input type="checkbox"> AI Task Breakdown Chat</label>
+              <label class="checkbox-label"><input type="checkbox"> PDF Note-to-Outline Scanner</label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="student-notes">What's your biggest academic challenge? (Optional)</label>
+            <input type="text" id="student-notes" class="form-input" placeholder="e.g. Balancing lab reports with midterm prep">
+          </div>
+
+          <button type="submit" class="btn-primary" style="width: 100%; margin-top: 1rem;" id="form-submit-cta">Join us!</button>
+        </form>
+
+        <div id="early-access-confirmation" style="display: none; text-align: center; padding: 2rem 0;">
+          <div style="font-size: 3rem; margin-bottom: 1rem;">🎉</div>
+          <h3 style="font-size: 1.6rem; margin-bottom: 0.5rem;" class="gradient-text">You're in Orbit!</h3>
+          <p style="color: var(--text-secondary); max-width: 440px; margin: 0 auto 1.5rem;">
+            Welcome to the waitlist! You've joined 1,609 fellow students. Check your inbox for updates and early access perks: [EARLY ACCESS PERK — TBD].
+          </p>
+          <a href="/calendar/" class="btn-secondary">Try Live Tools Now</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Global Footer -->
+  <footer class="orbit-footer">
+    <div class="footer-container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="nav-brand" style="margin-bottom: 0.5rem;">
+            <span class="logo-orb"></span>
+            <span>ORBIT</span>
+          </div>
+          <p>Your academics. Your routine. Your well-being. One orbit.</p>
+        </div>
+
+        <div class="footer-links">
+          <div class="footer-col">
+            <h4>Navigate</h4>
+            <ul>
+              <li><a href="#problem">Problem</a></li>
+              <li><a href="#capabilities">Features</a></li>
+              <li><a href="#how-it-works">How it Works</a></li>
+              <li><a href="#trust">Trust</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Live Tools</h4>
+            <ul>
+              <li><a href="./calendar/index.html">Aesthetic Calendar</a></li>
+              <li><a href="./todo/index.html">Cute Notes To-Do</a></li>
+              <li><a href="./focus/index.html">Focus Mode Timer</a></li>
+              <li><a href="./ask-orbit/index.html">Ask Orbit Chatbot</a></li>
+              <li><a href="./pdf-scanner/index.html">PDF Study Scanner</a></li>
+              <li><a href="./wellbeing/index.html">Well-Being Check</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Connect</h4>
+            <ul>
+              <li><a href="mailto:support@orbit.app">Contact: support@orbit.app</a></li>
+              <li><a href="#">Launch Date: Spring 2026</a></li>
+              <li><a href="#">Apps: iOS & Android (Coming Soon)</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-disclaimer">
+        Orbit is a supportive tool, not a substitute for professional medical or mental health care.
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; 2026 Orbit Student OS. All rights reserved.</div>
+        <div>Campus Counseling: Confidential Student Helpline</div>
+      </div>
+    </div>
+  </footer>
+
+  <script type="module" src="./src/scripts/home.js"></script>
+</body>
+</html>
